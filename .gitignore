@@ -5,4 +5,3 @@ _site
 vendor
 /.idea
 /node_modules
-package-lock.json
