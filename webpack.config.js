@@ -16,29 +16,6 @@ module.exports = {
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1, // https://webpack.js.org/loaders/postcss-loader/
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [
-                require('cssnano')(), // https://cssnano.co/
-              ],
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {},
-          },
-        ],
-      },
     ],
   },
 };
