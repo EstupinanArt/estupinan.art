@@ -20,7 +20,7 @@
     "develop:webpack": "webpack --mode development --watch",
     "build": "jekyll build --config _config.yml",
     "serve": "jekyll serve --livereload --incremental",
-    "production": "run-s production:webpack production:jekyll",
+    "production": "run-s production:jekyll production:webpack ",
     "production:jekyll": "JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build",
     "production:webpack": "webpack --mode production"
   }
