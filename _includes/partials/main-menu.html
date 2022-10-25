@@ -1,0 +1,9 @@
+<ul class="flex flex-col lg:flex-row lg:items-center">
+    {% for item in site.data.navigation %}
+    <li role="presentation">
+        <a class="flex px-4 py-2 lg:py-1 font-medium rounded-full lg:-mx-1{% if page.url == item.url %} cursor-default{% else %} hover:bg-black hover:shadow hover:text-gray-100 focus:shadow-outline-yellow{% endif %}" href="{{ site.baseurl }}{{ item.url }}">
+            {% t item.title %}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
