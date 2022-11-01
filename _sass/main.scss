@@ -1,3 +1,76 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.work-dropdown {
+  .menu {
+    @apply hidden;
+  }
+
+  &:hover {
+    .toggle {
+      @apply bg-black;
+      @apply shadow;
+      @apply text-gray-100;
+    }
+
+    .menu {
+      @apply block;
+    }
+  }
+}
+
+/* Navbar toggler */
+@media (max-width: 1023px) {
+  .navbar {
+    .navbar-content {
+      @apply hidden;
+    }
+
+    .navbar-toggle:checked ~ .navbar-content {
+      @apply block;
+    }
+  }
+}
+
+.basic-highlight {
+  @apply text-base;
+  @apply font-mono;
+  @apply tracking-tight;
+  @apply text-purple-600;
+  @apply bg-gray-50;
+  @apply rounded;
+  @apply leading-none;
+  @apply p-1;
+  @apply whitespace-nowrap;
+}
+
+code.highlight-red {
+  @extend .basic-highlight;
+  color: red;
+}
+
+code.highlight-green {
+  @extend .basic-highlight;
+  color: green;
+}
+
+code.highlight-blue {
+  @extend .basic-highlight;
+  color: blue;
+}
+
+code.highlight-orange {
+  @extend .basic-highlight;
+  color: orange;
+}
+
+code.highlight-yellow {
+  @extend .basic-highlight;
+  color: yellow;
+}
+
+code.highlight-purple {
+  @extend .basic-highlight;
+  color: purple;
+}

@@ -1,12 +1,24 @@
-<nav class="navbar bg-transparent text-estupinanDark dark:text-estupinanLightBlue w-full absolute z-10">
-  <div class="container absolute flex flex-row bg-transparent w-full max-w-screen-xl mx-1.5">
-      <div class="flex relative left-0 px-2 py-2 w-auto bg-transparent">
-          <button type="button" class="w-[120px] bg-transparent">
-              <img src="assets/images/logo.png" alt=""/>
-          </button>
-      </div>
-      <div class="flex py-6 relative right-0 xl:py-0 bg-transparent">
-        {% include partials/language-switcher.html %}
-      </div>
-  </div>
+<nav class="navbar bg-transparent w-full absolute z-0 lg:py-2">
+    <div class="container max-w-screen-lg mx-auto">
+        <div class="flex flex-col w-full lg:flex-row lg:items-center lg:py-4">
+            <div class="flex items-center w-full px-8 py-2 lg:px-0 lg:py-0 lg:w-auto border-b lg:border-none">
+                <label for="navbar-toggle" class="flex items-center p-1 border border-gray-300 rounded-md cursor-pointer text-green-500 lg:hidden">
+                    <svg class="fill-current" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="15" y="14" width="16" height="2" fill="black"></rect>
+                        <rect x="9" y="19" width="22" height="2" fill="black"></rect>
+                        <rect x="15" y="24" width="16" height="2" fill="black"></rect>
+                    </svg>
+                </label>
+            </div>
+            <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class="navbar-toggle sr-only" value="toggle">
+            <div class="navbar-content bg-estupinanDark shadow-xl flex flex-col w-full px-4 lg:px-0 lg:shadow-none lg:flex-1 lg:flex-row lg:items-center lg:bg-transparent">
+                <div class="border-t lg:border-none py-6 lg:py-0 flex items-center">
+                    <div class="hidden lg:block">
+                        {% include partials/menu-dropdown.html %}
+                    </div>
+                    {% include partials/language-switcher.html %}
+                </div>
+            </div>
+        </div>
+    </div>
 </nav>
