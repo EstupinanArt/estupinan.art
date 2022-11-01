@@ -15,6 +15,7 @@
     "webpack-cli": "^4.10.0"
   },
   "scripts": {
+    "requirements": "bundle install && build",
     "develop": "bundle exec jekyll clean && run-p develop:{webpack,jekyll}",
     "develop:jekyll": "bundle exec jekyll serve --livereload --incremental",
     "develop:webpack": "webpack --mode development --watch",
