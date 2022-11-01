@@ -7,3 +7,4 @@ vendor
 /node_modules
 package-lock.json
 notes.txt
+assets/js/main-bundle.js

@@ -29,7 +29,7 @@ new OrbitControls(camera, renderer.domElement);
 camera.position.z = 50;
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color("black");
+scene.background = new THREE.Color('rgb(14, 21, 29)');
 
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(1, 1, 1);
@@ -97,12 +97,6 @@ for (let i = -2; i < 3; i++) {
   scene.add(tetrahedronMesh); // add tetrahedron
   tetrahedronsMesh.push(tetrahedronMesh);
 }
-
-const geometry = new THREE.BoxGeometry(screenWidth, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-cube.position.set(0, 0, 0);
-scene.add(cube);
 
 function animate() {
   requestAnimationFrame(animate);
