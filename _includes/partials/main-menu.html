@@ -1,5 +1,5 @@
 {% for item in site.data.navigation %}
-    <a class="flex items-center px-2 py-4 lg:py-1 hover:bg-white space-x-2 font-large rounded-lg lg:-mx-1{% if page.url == item.url %} cursor-default{% else %} hover:shadow hover:text-estupinanDark-100 focus:shadow-outline-yellow{% endif %}" href="{{ site.baseurl }}{{ item.url }}" rel="noopener noreferrer">
+    <a class="flex items-center px-2 py-4 lg:py-1 hover:bg-estupinanDarkBlue space-x-2 font-large rounded-lg lg:-mx-1{% if page.url == item.url %} cursor-default{% else %} hover:shadow hover:text-estupinanDark-100 focus:shadow-outline-yellow{% endif %}" href="{{ site.baseurl }}{{ item.url }}" rel="noopener noreferrer">
         <div class="flex flex-1 flex-col ml-px">
             <div class="font-semibold">
                {% t item.title %}

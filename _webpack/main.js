@@ -29,7 +29,7 @@ new OrbitControls(camera, renderer.domElement);
 camera.position.z = 50;
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color('rgb(182, 207, 231)');
+scene.background = new THREE.Color('rgb(14, 21, 29)');
 
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(1, 1, 1);
