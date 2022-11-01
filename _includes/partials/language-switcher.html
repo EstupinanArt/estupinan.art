@@ -5,7 +5,9 @@
             {% if lang == site.default_language %}
                 {% assign lang_slug = "" %}            
             {% endif %}
-            <a class="flex rounded px-4 py-2 xl:py-1 {% if lang == site.lang %} cursor-default font-medium {% else %} text-estupinanBlueBase hover:bg-black hover:text-estupinanBlueWhite hover:shadow rounded-full{% endif %}" href="{{ lang_slug }}{{ page.url }}">
+            <a class="flex rounded px-4 py-2 xl:py-1 {% if lang == site.lang %} cursor-default font-medium text-estupinanDarkBlue
+            {% else %} text-estupinanBlueBase hover:bg-estupinanDark hover:text-estupinanBlueWhite hover:shadow
+            rounded-full{% endif %}" href="{{ lang_slug }}{{ page.url }}">
                 {{ site.data.languages[lang].name }}
             </a>
         </li>
