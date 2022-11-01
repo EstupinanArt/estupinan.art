@@ -2,16 +2,12 @@
     <div class="container max-w-screen-lg mx-auto">
         <div class="flex flex-col w-full lg:flex-row lg:items-center lg:py-4">
             <div class="flex items-center w-full px-8 py-2 lg:px-0 lg:py-0 lg:w-auto border-b lg:border-none">
-                <label for="navbar-toggle" class="flex items-center p-1 border border-gray-300 rounded-md cursor-pointer text-green-500 lg:hidden">
-                    <svg class="fill-current" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="15" y="14" width="16" height="2" fill="black"></rect>
-                        <rect x="9" y="19" width="22" height="2" fill="black"></rect>
-                        <rect x="15" y="24" width="16" height="2" fill="black"></rect>
-                    </svg>
+                <label for="navbar-toggle" class="flex items-center p-1 rounded-md cursor-pointer text-transparent lg:hidden">
+                    text
                 </label>
             </div>
             <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class="navbar-toggle sr-only" value="toggle">
-            <div class="navbar-content bg-estupinanDark shadow-xl flex flex-col w-full px-4 lg:px-0 lg:shadow-none lg:flex-1 lg:flex-row lg:items-center lg:bg-transparent">
+            <div class="navbar-content shadow-xl flex flex-col w-full px-4 lg:px-0 lg:shadow-none lg:flex-1 lg:flex-row lg:items-center lg:bg-transparent">
                 <div class="border-t lg:border-none py-6 lg:py-0 flex items-center">
                     <div class="hidden lg:block">
                         {% include partials/menu-dropdown.html %}
