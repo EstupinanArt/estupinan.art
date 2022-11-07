@@ -4,7 +4,8 @@ titles:
   blog: Blog
   projects: Proyectos
 
-greets: ¡Hola mundo!
+notifications:
+  build: Estamos en construcción...
 
 site:
   description: Alguna descripción cautivadora.
