@@ -67,6 +67,11 @@ tetrahedronParams.geo = tetrahedronGeo;
 // First line figures
 const figsFirstLine = { number: 6, figures: [cubeParams, tetrahedronParams] };
 
+// Texture base
+const textureLoaderBase = new THREE.TextureLoader().setPath(
+  "assets/images/series/landing/eventos_inorganicos/"
+);
+
 for (let i = -3; i < 3; i++) {
   let meshForPosition;
   let addY = 0;
@@ -74,9 +79,6 @@ for (let i = -3; i < 3; i++) {
     addY = 2.5;
 
     const textures = [];
-    const textureLoaderBase = new THREE.TextureLoader().setPath(
-      "assets/images/serie_eventos_inorganicos/"
-    );
     for (let j = 0; j < cubeParams.faces; j++) {
       const texture = textureLoaderBase.load(
         `evento-inorganico-0${j + 1}.jpeg`
@@ -96,13 +98,10 @@ for (let i = -3; i < 3; i++) {
     tetrahedronGeo.addGroup(9, 3, 3);
 
     const textures = [];
-    const textureLoaderBase = new THREE.TextureLoader().setPath(
-      "assets/images/serie_eventos_inorganicos/"
-    );
 
     for (let j = 0; j < tetrahedronParams.faces; j++) {
       const texture = textureLoaderBase.load(
-        `evento-inorganico-0${j + 1}.jpeg`
+        `evento_inorganico_${j + 1}.jpeg`
       );
       textures.push(new THREE.MeshPhongMaterial({ map: texture }));
     }
@@ -128,9 +127,6 @@ for (let i = -2; i < 3; i++) {
   tetrahedronGeo.addGroup(9, 3, 3);
 
   const textures = [];
-  const textureLoaderBase = new THREE.TextureLoader().setPath(
-    "assets/images/serie_eventos_inorganicos/"
-  );
 
   for (let j = 0; j < tetrahedronParams.faces; j++) {
     const texture = textureLoaderBase.load(`evento-inorganico-0${j + 1}.jpeg`);
