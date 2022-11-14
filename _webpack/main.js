@@ -1,35 +1,41 @@
 import * as THREE from "three";
-import * as dat from "dat.gui";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import gsap from "gsap";
 
 const raycaster = new THREE.Raycaster();
-const aspect = window.innerWidth / window.innerHeight;
+const windowHeight = window.innerHeight - window.innerHeight * 0.2;
+const aspect = window.innerWidth / windowHeight;
 const fov = 50;
 const screenWidth = fov * aspect - 8;
 const screenMidWidth = screenWidth / 2;
 const camera = new THREE.PerspectiveCamera(fov, aspect, 0.1, 2000);
+
+// Params for geo figures
 const cubeParams = {
   w: 6,
   h: 6,
   d: 6,
   faces: 6,
+  geo: undefined,
 };
 const tetrahedronParams = {
-  r: 6.5,
+  r: 5,
   faces: 4,
+  geo: undefined,
 };
 
+// Renderer configuration
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth, windowHeight);
 renderer.setPixelRatio(devicePixelRatio);
 document.body.appendChild(renderer.domElement);
 
+// Orbit control to move the camera
 new OrbitControls(camera, renderer.domElement);
 camera.position.z = 50;
 
+// Scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color('rgb(14, 21, 29)');
+scene.background = new THREE.Color("rgb(14, 21, 29)");
 
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(1, 1, 1);
@@ -43,37 +49,76 @@ const backLight = new THREE.DirectionalLight(0xffffff, 0.5);
 backLight.position.set(-1, -1, -1);
 scene.add(backLight);
 
+// Mouse position
 const mouse = {
   x: undefined,
   y: undefined,
 };
 
+// Basic figure configuration
 const cubesMesh = [];
+const tetrahedronsMesh = [];
+
+const cubeGeo = new THREE.BoxGeometry(cubeParams.w, cubeParams.h, cubeParams.d);
+cubeParams.geo = cubeGeo;
+const tetrahedronGeo = new THREE.TetrahedronGeometry(tetrahedronParams.r);
+tetrahedronParams.geo = tetrahedronGeo;
+
+// First line figures
+const figsFirstLine = { number: 6, figures: [cubeParams, tetrahedronParams] };
 
 for (let i = -3; i < 3; i++) {
-  const cubeGeo = new THREE.BoxGeometry(
-    cubeParams.w,
-    cubeParams.h,
-    cubeParams.d
-  );
+  let meshForPosition;
+  let addY = 0;
+  if (i % 2 == 0) {
+    addY = 2.5;
 
-  const textures = [];
-  const textureLoaderBase = new THREE.TextureLoader().setPath(
-    "assets/images/serie_eventos_inorganicos/"
-  );
+    const textures = [];
+    const textureLoaderBase = new THREE.TextureLoader().setPath(
+      "assets/images/serie_eventos_inorganicos/"
+    );
+    for (let j = 0; j < cubeParams.faces; j++) {
+      const texture = textureLoaderBase.load(
+        `evento-inorganico-0${j + 1}.jpeg`
+      );
+      textures.push(new THREE.MeshPhongMaterial({ map: texture }));
+    }
 
-  for (let j = 0; j < cubeParams.faces; j++) {
-    const texture = textureLoaderBase.load(`evento-inorganico-0${j + 1}.jpeg`);
-    textures.push(new THREE.MeshPhongMaterial({ map: texture }));
+    const cubeMesh = new THREE.Mesh(cubeParams.geo, textures);
+    meshForPosition = cubeMesh;
+    scene.add(cubeMesh); // add cube
+    cubesMesh.push(cubeMesh);
+  } else {
+    addY = -2.5;
+    tetrahedronGeo.addGroup(0, 3, 0);
+    tetrahedronGeo.addGroup(3, 3, 1);
+    tetrahedronGeo.addGroup(6, 3, 2);
+    tetrahedronGeo.addGroup(9, 3, 3);
+
+    const textures = [];
+    const textureLoaderBase = new THREE.TextureLoader().setPath(
+      "assets/images/serie_eventos_inorganicos/"
+    );
+
+    for (let j = 0; j < tetrahedronParams.faces; j++) {
+      const texture = textureLoaderBase.load(
+        `evento-inorganico-0${j + 1}.jpeg`
+      );
+      textures.push(new THREE.MeshPhongMaterial({ map: texture }));
+    }
+
+    const tetrahedronMesh = new THREE.Mesh(tetrahedronParams.geo, textures);
+    meshForPosition = tetrahedronMesh;
+    scene.add(tetrahedronMesh); // add tetrahedron
+    tetrahedronsMesh.push(tetrahedronMesh);
   }
 
-  const cubeMesh = new THREE.Mesh(cubeGeo, textures);
-  cubeMesh.position.set((screenWidth * i) / 6 + screenMidWidth / 6, fov / 5, 0);
-  scene.add(cubeMesh); // add cube
-  cubesMesh.push(cubeMesh);
+  meshForPosition.position.set(
+    (screenWidth * i) / 6 + screenMidWidth / 6,
+    fov / 5 + addY,
+    0
+  );
 }
-
-const tetrahedronsMesh = [];
 
 for (let i = -2; i < 3; i++) {
   const tetrahedronGeo = new THREE.TetrahedronGeometry(tetrahedronParams.r);
@@ -98,17 +143,31 @@ for (let i = -2; i < 3; i++) {
   tetrahedronsMesh.push(tetrahedronMesh);
 }
 
+const geometry = new THREE.BoxGeometry(screenWidth, 1, 1);
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const cube = new THREE.Mesh(geometry, material);
+cube.position.set(0, 0, 0);
+scene.add(cube);
+
 function animate() {
   requestAnimationFrame(animate);
-  cubesMesh.forEach((cube) => {
-    cube.rotation.x += 0.002;
-    cube.rotation.y += 0.003;
-    cube.rotation.z += 0.001;
+  cubesMesh.forEach((cube, index) => {
+    let rand1 = Math.random();
+    let rand2 = Math.random();
+    let rand3 = Math.random();
+    const sign = index % 2 === 0 ? 1 : -1;
+    cube.rotation.x += 0.0008 * rand1 * sign;
+    cube.rotation.y += 0.0009 * rand2 * sign;
+    cube.rotation.z += 0.0007 * rand3 * sign;
   });
-  tetrahedronsMesh.forEach((tetrahedron) => {
-    tetrahedron.rotation.x += 0.001;
-    tetrahedron.rotation.y += 0.002;
-    tetrahedron.rotation.z += 0.003;
+  tetrahedronsMesh.forEach((tetrahedron, index) => {
+    const rand1 = Math.random();
+    const rand2 = Math.random();
+    const rand3 = Math.random();
+    const sign = index % 2 === 0 ? 1 : -1;
+    tetrahedron.rotation.x += 0.0008 * rand1 * sign;
+    tetrahedron.rotation.y += 0.0009 * rand2 * sign;
+    tetrahedron.rotation.z += 0.0007 * rand3 * sign;
   });
   // cubeMesh.rotation.x += 0.002;
   // cubeMesh.rotation.y += 0.003;
