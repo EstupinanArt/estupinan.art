@@ -67,37 +67,41 @@ const octahedronParams = {
   faces: 8,
 };
 const sphereParams = {
-  r: 5,
-  w: 6,
-  h: 6,
+  r: 4,
+  w: 35,
+  h: 35,
   faces: 1,
 };
-const allParamsForGroup = [
+const allParamsForTriangleGroup = [
   tetrahedronParams,
-  dodecahedronParams,
   icosahedronParams,
   octahedronParams,
 ];
+const allParamsForPentagonGroup = [dodecahedronParams];
 
 // Basic figures configuration
+const allMesh = [];
 const cubesMesh = [];
-const tetrahedronsMesh = [];
-
 const cubeGeo = new THREE.BoxGeometry(cubeParams.w, cubeParams.h, cubeParams.d);
 cubeParams.geo = cubeGeo;
 
+const tetrahedronsMesh = [];
 const tetrahedronGeo = new THREE.TetrahedronGeometry(tetrahedronParams.r);
 tetrahedronParams.geo = tetrahedronGeo;
 
+const dodecahedronsMesh = [];
 const dodecahedronGeo = new THREE.DodecahedronGeometry(dodecahedronParams.r);
 dodecahedronParams.geo = dodecahedronGeo;
 
+const icosahedronsMesh = [];
 const icosahedronGeo = new THREE.IcosahedronGeometry(icosahedronParams.r);
 icosahedronParams.geo = icosahedronGeo;
 
+const octahedronsMesh = [];
 const octahedronGeo = new THREE.OctahedronGeometry(octahedronParams.r);
 octahedronParams.geo = octahedronGeo;
 
+const spheresMesh = [];
 const sphereGeo = new THREE.SphereGeometry(
   sphereParams.r,
   sphereParams.w,
@@ -106,14 +110,19 @@ const sphereGeo = new THREE.SphereGeometry(
 sphereParams.geo = sphereGeo;
 
 // Set groups to necessary geometries
-allParamsForGroup.forEach((param) => {
+allParamsForTriangleGroup.forEach((param) => {
   for (let i = 0; i < param.faces; i++) {
     param.geo.addGroup(i * 3, 3, i);
   }
 });
+allParamsForPentagonGroup.forEach((param) => {
+  for (let i = 0; i < param.faces; i++) {
+    param.geo.addGroup(i * 9, 9, i);
+  }
+});
 
 // Series names (folders), number of paints (to be displayed in landing) and order
-const seriesEstupinan = [
+const seriesArt = [
   {
     folder: "colombia_2014",
     file: "col_tab_2014_",
@@ -161,6 +170,7 @@ const seriesEstupinan = [
     file: "paris_tab_95_",
     number: 22,
     params: icosahedronParams,
+    start: 8,
   },
   {
     folder: "paris_tab_99",
@@ -184,76 +194,86 @@ const seriesEstupinan = [
 
 // Texture base
 const textureLoaderBase = new THREE.TextureLoader().setPath(
-  "assets/images/series/landing/eventos_inorganicos/"
+  "assets/images/series/landing/"
 );
 
-// Number of columns in the first row
-let firstRowColumnsNumber = 2;
-let secondRowColumnsNumber = 2;
+// ROWS CONFIG
+
+// Number of columns on each row
+let rows = [2, 2];
 
 if (window.innerWidth > 760) {
-  firstRowColumnsNumber = 6;
-  secondRowColumnsNumber = 5;
+  rows = [6, 5];
 }
 
-const halfFirstRowColumnsNumber = firstRowColumnsNumber / 2;
-const halfSecondRowColumnsNumber = secondRowColumnsNumber / 2;
+const rowsNum = rows.length;
+const halfRowsNum = Math.floor(rowsNum / 2);
+for (let indexRow = 0; indexRow < rows.length; indexRow++) {
+  const columnsNum = rows[indexRow];
+  const addForRange = columnsNum % 2 === 0 ? 0 : 1;
+  const halfColumnsNum = Math.floor(columnsNum / 2);
+  for (
+    let column = -halfColumnsNum;
+    column < halfColumnsNum + addForRange;
+    column++
+  ) {
+    let addY = column % 2 == 0 ? 2.5 : -2.5;
 
-for (let i = -halfFirstRowColumnsNumber; i < halfFirstRowColumnsNumber; i++) {
-  let meshForPosition;
-  let addY = i % 2 == 0 ? 2.5 : -2.5;
-
-  if (i % 2 == 0) {
     const textures = [];
-    for (let j = 0; j < cubeParams.faces; j++) {
-      const texture = textureLoaderBase.load(`evento_inorganico_${j + 1}.jpeg`);
+    const serie =
+      indexRow === 0
+        ? seriesArt[column + halfColumnsNum]
+        : seriesArt[indexRow * rows[indexRow - 1] + (column + halfColumnsNum)];
+    const facesNumber = serie.params.faces;
+    for (let j = 0; j < facesNumber; j++) {
+      let start = 0;
+      if (serie.start) start = j + serie.start;
+      const texture = textureLoaderBase.load(
+        `/${serie.folder}/${serie.file}${start + 1}.jpeg`
+      );
       textures.push(new THREE.MeshPhongMaterial({ map: texture }));
     }
 
-    const cubeMesh = new THREE.Mesh(cubeParams.geo, textures);
-    meshForPosition = cubeMesh;
-    scene.add(cubeMesh); // add cube
-    cubesMesh.push(cubeMesh);
-  } else {
-    const textures = [];
+    const mesh =
+      facesNumber === 1
+        ? new THREE.Mesh(serie.params.geo, textures[0])
+        : new THREE.Mesh(serie.params.geo, textures);
 
-    for (let j = 0; j < tetrahedronParams.faces; j++) {
-      const texture = textureLoaderBase.load(`evento_inorganico_${j + 1}.jpeg`);
-      textures.push(new THREE.MeshPhongMaterial({ map: texture }));
-    }
+    const oddColumAdd = columnsNum % 2 ? 0 : screenMidWidth / columnsNum;
+    const locationY = halfRowsNum - indexRow;
+    const oddRowAdd = rowsNum % 2 === 0 && locationY <= 0 ? -fov / 5 : 0;
 
-    const tetrahedronMesh = new THREE.Mesh(tetrahedronParams.geo, textures);
-    meshForPosition = tetrahedronMesh;
-    scene.add(tetrahedronMesh); // add tetrahedron
-    tetrahedronsMesh.push(tetrahedronMesh);
+    mesh.position.set(
+      (screenWidth * column) / columnsNum + oddColumAdd,
+      (locationY * fov) / 5 + oddRowAdd + addY,
+      0
+    );
+
+    scene.add(mesh); // add mesh figure
+    allMesh.push(mesh);
   }
-
-  meshForPosition.position.set(
-    (screenWidth * i) / 6 + screenMidWidth / 6,
-    fov / 5 + addY,
-    0
-  );
 }
+// First row
 
-for (let i = -2; i < 3; i++) {
-  const tetrahedronGeo = new THREE.TetrahedronGeometry(tetrahedronParams.r);
-  tetrahedronGeo.addGroup(0, 3, 0);
-  tetrahedronGeo.addGroup(3, 3, 1);
-  tetrahedronGeo.addGroup(6, 3, 2);
-  tetrahedronGeo.addGroup(9, 3, 3);
+// for (let i = -2; i < 3; i++) {
+//   const tetrahedronGeo = new THREE.TetrahedronGeometry(tetrahedronParams.r);
+//   tetrahedronGeo.addGroup(0, 3, 0);
+//   tetrahedronGeo.addGroup(3, 3, 1);
+//   tetrahedronGeo.addGroup(6, 3, 2);
+//   tetrahedronGeo.addGroup(9, 3, 3);
 
-  const textures = [];
+//   const textures = [];
 
-  for (let j = 0; j < tetrahedronParams.faces; j++) {
-    const texture = textureLoaderBase.load(`evento_inorganico_${j + 1}.jpeg`);
-    textures.push(new THREE.MeshPhongMaterial({ map: texture }));
-  }
+//   for (let j = 0; j < tetrahedronParams.faces; j++) {
+//     const texture = textureLoaderBase.load(`evento_inorganico_${j + 1}.jpeg`);
+//     textures.push(new THREE.MeshPhongMaterial({ map: texture }));
+//   }
 
-  const tetrahedronMesh = new THREE.Mesh(tetrahedronGeo, textures);
-  tetrahedronMesh.position.set((screenWidth * i) / 5, -fov / 5, 0);
-  scene.add(tetrahedronMesh); // add tetrahedron
-  tetrahedronsMesh.push(tetrahedronMesh);
-}
+//   const tetrahedronMesh = new THREE.Mesh(tetrahedronGeo, textures);
+//   tetrahedronMesh.position.set((screenWidth * i) / 5, -fov / 5, 0);
+//   scene.add(tetrahedronMesh); // add tetrahedron
+//   tetrahedronsMesh.push(tetrahedronMesh);
+// }
 
 const geometry = new THREE.BoxGeometry(screenWidth, 1, 1);
 const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -263,24 +283,24 @@ scene.add(cube);
 
 function animate() {
   requestAnimationFrame(animate);
-  cubesMesh.forEach((cube, index) => {
+  allMesh.forEach((mesh, index) => {
     let rand1 = Math.random();
     let rand2 = Math.random();
     let rand3 = Math.random();
     const sign = index % 2 === 0 ? 1 : -1;
-    cube.rotation.x += 0.0008 * rand1 * sign;
-    cube.rotation.y += 0.0009 * rand2 * sign;
-    cube.rotation.z += 0.0007 * rand3 * sign;
+    mesh.rotation.x += 0.001 * rand1 * sign;
+    mesh.rotation.y += 0.0012 * rand2 * sign;
+    mesh.rotation.z += 0.0014 * rand3 * sign;
   });
-  tetrahedronsMesh.forEach((tetrahedron, index) => {
-    const rand1 = Math.random();
-    const rand2 = Math.random();
-    const rand3 = Math.random();
-    const sign = index % 2 === 0 ? 1 : -1;
-    tetrahedron.rotation.x += 0.0008 * rand1 * sign;
-    tetrahedron.rotation.y += 0.0009 * rand2 * sign;
-    tetrahedron.rotation.z += 0.0007 * rand3 * sign;
-  });
+  // tetrahedronsMesh.forEach((tetrahedron, index) => {
+  //   const rand1 = Math.random();
+  //   const rand2 = Math.random();
+  //   const rand3 = Math.random();
+  //   const sign = index % 2 === 0 ? 1 : -1;
+  //   tetrahedron.rotation.x += 0.0008 * rand1 * sign;
+  //   tetrahedron.rotation.y += 0.0009 * rand2 * sign;
+  //   tetrahedron.rotation.z += 0.0007 * rand3 * sign;
+  // });
   // cubeMesh.rotation.x += 0.002;
   // cubeMesh.rotation.y += 0.003;
   // cubeMesh.rotation.z += 0.001;
