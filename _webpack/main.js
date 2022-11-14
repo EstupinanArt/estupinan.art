@@ -9,35 +9,6 @@ const screenWidth = fov * aspect - 8;
 const screenMidWidth = screenWidth / 2;
 const camera = new THREE.PerspectiveCamera(fov, aspect, 0.1, 2000);
 
-// Series names (folders), number of paints (to be displayed in landing) and order
-const seriesEstupinan = [
-  { name: "colombia_2014", number: 19 },
-  { name: "espana_2002_2005", number: 18 },
-  { name: "eventos_inorganicos", number: 23 },
-  { name: "hong_kong", number: 8 },
-  { name: "negra_paris_1999", number: 10 },
-  { name: "paris_tab_91", number: 1 },
-  { name: "paris_tab_93", number: 8 },
-  { name: "paris_tab_95", number: 22 },
-  { name: "paris_tab_99", number: 12 },
-  { name: "pekin", number: 17 },
-  { name: "shanshuei_hua", number: 11 },
-];
-
-// Params for geo figures
-const cubeParams = {
-  w: 6,
-  h: 6,
-  d: 6,
-  faces: 6,
-  geo: undefined,
-};
-const tetrahedronParams = {
-  r: 5,
-  faces: 4,
-  geo: undefined,
-};
-
 // Renderer configuration
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, windowHeight);
@@ -70,29 +41,169 @@ const mouse = {
   y: undefined,
 };
 
-// Basic figure configuration
+// GEO FIGURES
+
+// Params for geo figures
+const cubeParams = {
+  w: 6,
+  h: 6,
+  d: 6,
+  faces: 6,
+};
+const tetrahedronParams = {
+  r: 5,
+  faces: 4,
+};
+const dodecahedronParams = {
+  r: 5,
+  faces: 12,
+};
+const icosahedronParams = {
+  r: 5,
+  faces: 20,
+};
+const octahedronParams = {
+  r: 5,
+  faces: 8,
+};
+const sphereParams = {
+  r: 5,
+  w: 6,
+  h: 6,
+  faces: 1,
+};
+const allParamsForGroup = [
+  tetrahedronParams,
+  dodecahedronParams,
+  icosahedronParams,
+  octahedronParams,
+];
+
+// Basic figures configuration
 const cubesMesh = [];
 const tetrahedronsMesh = [];
 
 const cubeGeo = new THREE.BoxGeometry(cubeParams.w, cubeParams.h, cubeParams.d);
 cubeParams.geo = cubeGeo;
+
 const tetrahedronGeo = new THREE.TetrahedronGeometry(tetrahedronParams.r);
 tetrahedronParams.geo = tetrahedronGeo;
 
-// First line figures
-const figsFirstLine = { number: 6, figures: [cubeParams, tetrahedronParams] };
+const dodecahedronGeo = new THREE.DodecahedronGeometry(dodecahedronParams.r);
+dodecahedronParams.geo = dodecahedronGeo;
+
+const icosahedronGeo = new THREE.IcosahedronGeometry(icosahedronParams.r);
+icosahedronParams.geo = icosahedronGeo;
+
+const octahedronGeo = new THREE.OctahedronGeometry(octahedronParams.r);
+octahedronParams.geo = octahedronGeo;
+
+const sphereGeo = new THREE.SphereGeometry(
+  sphereParams.r,
+  sphereParams.w,
+  sphereParams.h
+);
+sphereParams.geo = sphereGeo;
+
+// Set groups to necessary geometries
+allParamsForGroup.forEach((param) => {
+  for (let i = 0; i < param.faces; i++) {
+    param.geo.addGroup(i * 3, 3, i);
+  }
+});
+
+// Series names (folders), number of paints (to be displayed in landing) and order
+const seriesEstupinan = [
+  {
+    folder: "colombia_2014",
+    file: "col_tab_2014_",
+    number: 19,
+    params: dodecahedronParams,
+  },
+  {
+    folder: "espana_2002_2005",
+    file: "espa_tab_",
+    number: 18,
+    params: dodecahedronParams,
+  },
+  {
+    folder: "eventos_inorganicos",
+    file: "evento_inorganico_",
+    number: 23,
+    params: icosahedronParams,
+  },
+  {
+    folder: "hong_kong",
+    file: "hk_tab_89_",
+    number: 8,
+    params: octahedronParams,
+  },
+  {
+    folder: "negra_paris_1999",
+    file: "paris_noire_99_",
+    number: 10,
+    params: octahedronParams,
+  },
+  {
+    folder: "paris_tab_91",
+    file: "paris_tab_91_",
+    number: 1,
+    params: sphereParams,
+  },
+  {
+    folder: "paris_tab_93",
+    file: "paris_tab_93_",
+    number: 8,
+    params: octahedronParams,
+  },
+  {
+    folder: "paris_tab_95",
+    file: "paris_tab_95_",
+    number: 22,
+    params: icosahedronParams,
+  },
+  {
+    folder: "paris_tab_99",
+    file: "paris_tab_99_",
+    number: 12,
+    params: dodecahedronParams,
+  },
+  {
+    folder: "pekin",
+    file: "pekin_87_",
+    number: 17,
+    params: dodecahedronParams,
+  },
+  {
+    folder: "shanshuei_hua",
+    file: "shanshuei_hua_",
+    number: 11,
+    params: octahedronParams,
+  },
+];
 
 // Texture base
 const textureLoaderBase = new THREE.TextureLoader().setPath(
   "assets/images/series/landing/eventos_inorganicos/"
 );
 
-for (let i = -3; i < 3; i++) {
-  let meshForPosition;
-  let addY = 0;
-  if (i % 2 == 0) {
-    addY = 2.5;
+// Number of columns in the first row
+let firstRowColumnsNumber = 2;
+let secondRowColumnsNumber = 2;
 
+if (window.innerWidth > 760) {
+  firstRowColumnsNumber = 6;
+  secondRowColumnsNumber = 5;
+}
+
+const halfFirstRowColumnsNumber = firstRowColumnsNumber / 2;
+const halfSecondRowColumnsNumber = secondRowColumnsNumber / 2;
+
+for (let i = -halfFirstRowColumnsNumber; i < halfFirstRowColumnsNumber; i++) {
+  let meshForPosition;
+  let addY = i % 2 == 0 ? 2.5 : -2.5;
+
+  if (i % 2 == 0) {
     const textures = [];
     for (let j = 0; j < cubeParams.faces; j++) {
       const texture = textureLoaderBase.load(`evento_inorganico_${j + 1}.jpeg`);
@@ -104,12 +215,6 @@ for (let i = -3; i < 3; i++) {
     scene.add(cubeMesh); // add cube
     cubesMesh.push(cubeMesh);
   } else {
-    addY = -2.5;
-    tetrahedronGeo.addGroup(0, 3, 0);
-    tetrahedronGeo.addGroup(3, 3, 1);
-    tetrahedronGeo.addGroup(6, 3, 2);
-    tetrahedronGeo.addGroup(9, 3, 3);
-
     const textures = [];
 
     for (let j = 0; j < tetrahedronParams.faces; j++) {
