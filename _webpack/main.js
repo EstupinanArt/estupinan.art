@@ -9,6 +9,21 @@ const screenWidth = fov * aspect - 8;
 const screenMidWidth = screenWidth / 2;
 const camera = new THREE.PerspectiveCamera(fov, aspect, 0.1, 2000);
 
+// Series names (folders), number of paints (to be displayed in landing) and order
+const seriesEstupinan = [
+  { name: "colombia_2014", number: 19 },
+  { name: "espana_2002_2005", number: 18 },
+  { name: "eventos_inorganicos", number: 23 },
+  { name: "hong_kong", number: 8 },
+  { name: "negra_paris_1999", number: 10 },
+  { name: "paris_tab_91", number: 1 },
+  { name: "paris_tab_93", number: 8 },
+  { name: "paris_tab_95", number: 22 },
+  { name: "paris_tab_99", number: 12 },
+  { name: "pekin", number: 17 },
+  { name: "shanshuei_hua", number: 11 },
+];
+
 // Params for geo figures
 const cubeParams = {
   w: 6,
@@ -80,9 +95,7 @@ for (let i = -3; i < 3; i++) {
 
     const textures = [];
     for (let j = 0; j < cubeParams.faces; j++) {
-      const texture = textureLoaderBase.load(
-        `evento-inorganico-0${j + 1}.jpeg`
-      );
+      const texture = textureLoaderBase.load(`evento_inorganico_${j + 1}.jpeg`);
       textures.push(new THREE.MeshPhongMaterial({ map: texture }));
     }
 
@@ -100,9 +113,7 @@ for (let i = -3; i < 3; i++) {
     const textures = [];
 
     for (let j = 0; j < tetrahedronParams.faces; j++) {
-      const texture = textureLoaderBase.load(
-        `evento_inorganico_${j + 1}.jpeg`
-      );
+      const texture = textureLoaderBase.load(`evento_inorganico_${j + 1}.jpeg`);
       textures.push(new THREE.MeshPhongMaterial({ map: texture }));
     }
 
@@ -129,7 +140,7 @@ for (let i = -2; i < 3; i++) {
   const textures = [];
 
   for (let j = 0; j < tetrahedronParams.faces; j++) {
-    const texture = textureLoaderBase.load(`evento-inorganico-0${j + 1}.jpeg`);
+    const texture = textureLoaderBase.load(`evento_inorganico_${j + 1}.jpeg`);
     textures.push(new THREE.MeshPhongMaterial({ map: texture }));
   }
 
