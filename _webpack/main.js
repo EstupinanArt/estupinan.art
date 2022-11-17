@@ -1,5 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 
 const raycaster = new THREE.Raycaster();
 const windowHeight = window.innerHeight - window.innerHeight * 0.2;
@@ -8,6 +10,10 @@ const fov = 50;
 const screenWidth = fov * aspect - 8;
 const screenMidWidth = screenWidth / 2;
 const camera = new THREE.PerspectiveCamera(fov, aspect, 0.1, 2000);
+
+// Configure text
+const allMeshText = [];
+const loader = new FontLoader();
 
 // Renderer configuration
 const renderer = new THREE.WebGLRenderer();
@@ -80,28 +86,22 @@ const allParamsForTriangleGroup = [
 const allParamsForPentagonGroup = [dodecahedronParams];
 
 // Basic figures configuration
-const allMesh = [];
-const cubesMesh = [];
+const allMeshGeo = [];
 const cubeGeo = new THREE.BoxGeometry(cubeParams.w, cubeParams.h, cubeParams.d);
 cubeParams.geo = cubeGeo;
 
-const tetrahedronsMesh = [];
 const tetrahedronGeo = new THREE.TetrahedronGeometry(tetrahedronParams.r);
 tetrahedronParams.geo = tetrahedronGeo;
 
-const dodecahedronsMesh = [];
 const dodecahedronGeo = new THREE.DodecahedronGeometry(dodecahedronParams.r);
 dodecahedronParams.geo = dodecahedronGeo;
 
-const icosahedronsMesh = [];
 const icosahedronGeo = new THREE.IcosahedronGeometry(icosahedronParams.r);
 icosahedronParams.geo = icosahedronGeo;
 
-const octahedronsMesh = [];
 const octahedronGeo = new THREE.OctahedronGeometry(octahedronParams.r);
 octahedronParams.geo = octahedronGeo;
 
-const spheresMesh = [];
 const sphereGeo = new THREE.SphereGeometry(
   sphereParams.r,
   sphereParams.w,
@@ -128,42 +128,49 @@ const seriesArt = [
     file: "col_tab_2014_",
     number: 19,
     params: dodecahedronParams,
+    name: "Colombia 2014",
   },
   {
     folder: "espana_2002_2005",
     file: "espa_tab_",
     number: 18,
     params: dodecahedronParams,
+    name: "España 2002",
   },
   {
     folder: "eventos_inorganicos",
     file: "evento_inorganico_",
     number: 23,
     params: icosahedronParams,
+    name: "Eventos inorgánicos",
   },
   {
     folder: "hong_kong",
     file: "hk_tab_89_",
     number: 8,
     params: octahedronParams,
+    name: "Honk Kong",
   },
   {
     folder: "negra_paris_1999",
     file: "paris_noire_99_",
     number: 10,
     params: octahedronParams,
+    name: "Negra París",
   },
   {
     folder: "paris_tab_91",
     file: "paris_tab_91_",
     number: 1,
     params: sphereParams,
+    name: "París 1991",
   },
   {
     folder: "paris_tab_93",
     file: "paris_tab_93_",
     number: 8,
     params: octahedronParams,
+    name: "París 1993",
   },
   {
     folder: "paris_tab_95",
@@ -171,24 +178,28 @@ const seriesArt = [
     number: 22,
     params: icosahedronParams,
     start: 8,
+    name: "París 1995",
   },
   {
     folder: "paris_tab_99",
     file: "paris_tab_99_",
     number: 12,
     params: dodecahedronParams,
+    name: "París 1999",
   },
   {
     folder: "pekin",
     file: "pekin_87_",
     number: 17,
     params: dodecahedronParams,
+    name: "Pekín",
   },
   {
     folder: "shanshuei_hua",
     file: "shanshuei_hua_",
     number: 11,
     params: octahedronParams,
+    name: "Shanshuei Hua",
   },
 ];
 
@@ -208,16 +219,18 @@ if (window.innerWidth > 760) {
 
 const rowsNum = rows.length;
 const halfRowsNum = Math.floor(rowsNum / 2);
+// Iterate for each row
 for (let indexRow = 0; indexRow < rows.length; indexRow++) {
   const columnsNum = rows[indexRow];
   const addForRange = columnsNum % 2 === 0 ? 0 : 1;
   const halfColumnsNum = Math.floor(columnsNum / 2);
+  // Iterate for each colum
   for (
     let column = -halfColumnsNum;
     column < halfColumnsNum + addForRange;
     column++
   ) {
-    let addY = column % 2 == 0 ? 2.5 : -2.5;
+    let addY = column % 2 === 0 ? 2.5 : -2.5;
 
     const textures = [];
     const serie =
@@ -243,14 +256,47 @@ for (let indexRow = 0; indexRow < rows.length; indexRow++) {
     const locationY = halfRowsNum - indexRow;
     const oddRowAdd = rowsNum % 2 === 0 && locationY <= 0 ? -fov / 5 : 0;
 
-    mesh.position.set(
-      (screenWidth * column) / columnsNum + oddColumAdd,
-      (locationY * fov) / 5 + oddRowAdd + addY,
-      0
-    );
+    const xPositionGeo = (screenWidth * column) / columnsNum + oddColumAdd;
+    const yPositionGeo = (locationY * fov) / 5 + oddRowAdd + addY;
+    const zPositionGeo = 0;
+
+    mesh.position.set(xPositionGeo, yPositionGeo, zPositionGeo);
 
     scene.add(mesh); // add mesh figure
-    allMesh.push(mesh);
+    allMeshGeo.push(mesh); // include in the array of all geo meshes
+
+    // Load text
+    let meshText;
+    let addYMeshText = column % 2 === 0 ? -7 : 7;
+    loader.load(
+      "https://threejs.org/examples/fonts/helvetiker_regular.typeface.json",
+      function (font) {
+        const geometry = new TextGeometry(serie.name, {
+          font: font,
+          size: 1,
+          height: 0.05,
+          curveSegments: 4,
+          bevelEnabled: false,
+          bevelThickness: 10,
+          bevelSize: 8,
+          bevelSegments: 3,
+        });
+        geometry.center();
+        const material = new THREE.MeshPhongMaterial({
+          color: "#dbe4eb",
+          specular: "#dbe4eb",
+        });
+        meshText = new THREE.Mesh(geometry, material);
+        meshText.quaternion.copy(camera.quaternion);
+        meshText.position.set(
+          xPositionGeo,
+          yPositionGeo + addYMeshText,
+          zPositionGeo
+        );
+        scene.add(meshText);
+        allMeshText.push(meshText);
+      }
+    );
   }
 }
 // First row
@@ -283,7 +329,7 @@ scene.add(cube);
 
 function animate() {
   requestAnimationFrame(animate);
-  allMesh.forEach((mesh, index) => {
+  allMeshGeo.forEach((mesh, index) => {
     let rand1 = Math.random();
     let rand2 = Math.random();
     let rand3 = Math.random();
@@ -291,6 +337,9 @@ function animate() {
     mesh.rotation.x += 0.001 * rand1 * sign;
     mesh.rotation.y += 0.0012 * rand2 * sign;
     mesh.rotation.z += 0.0014 * rand3 * sign;
+  });
+  allMeshText.forEach((mesh) => {
+    if (mesh) mesh.quaternion.copy(camera.quaternion);
   });
   // tetrahedronsMesh.forEach((tetrahedron, index) => {
   //   const rand1 = Math.random();
