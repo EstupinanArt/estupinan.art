@@ -239,10 +239,9 @@ for (let indexRow = 0; indexRow < rows.length; indexRow++) {
         : seriesArt[indexRow * rows[indexRow - 1] + (column + halfColumnsNum)];
     const facesNumber = serie.params.faces;
     for (let j = 0; j < facesNumber; j++) {
-      let start = 0;
-      if (serie.start) start = j + serie.start;
+      let start = serie.start ?? 0;
       const texture = textureLoaderBase.load(
-        `/${serie.folder}/${serie.file}${start + 1}.jpeg`
+        `/${serie.folder}/${serie.file}${j + start + 1}.jpeg`
       );
       textures.push(new THREE.MeshPhongMaterial({ map: texture }));
     }
@@ -318,11 +317,11 @@ for (let indexRow = 0; indexRow < rows.length; indexRow++) {
 //   tetrahedronsMesh.push(tetrahedronMesh);
 // }
 
-const geometry = new THREE.BoxGeometry(screenWidth, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-cube.position.set(0, 0, 0);
-scene.add(cube);
+// const geometry = new THREE.BoxGeometry(screenWidth, 1, 1);
+// const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+// const cube = new THREE.Mesh(geometry, material);
+// cube.position.set(0, 0, 0);
+// scene.add(cube);
 
 function animate() {
   requestAnimationFrame(animate);
