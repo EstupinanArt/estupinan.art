@@ -268,35 +268,32 @@ for (let indexRow = 0; indexRow < rows.length; indexRow++) {
     // Load text
     let meshText;
     let addYMeshText = column % 2 === 0 ? -7 : 7;
-    loader.load(
-      "https://threejs.org/examples/fonts/helvetiker_regular.typeface.json",
-      function (font) {
-        const geometry = new TextGeometry(serie.name, {
-          font: font,
-          size: 1,
-          height: 0.05,
-          curveSegments: 4,
-          bevelEnabled: false,
-          bevelThickness: 10,
-          bevelSize: 8,
-          bevelSegments: 3,
-        });
-        geometry.center();
-        const material = new THREE.MeshPhongMaterial({
-          color: "#dbe4eb",
-          specular: "#dbe4eb",
-        });
-        meshText = new THREE.Mesh(geometry, material);
-        meshText.quaternion.copy(camera.quaternion);
-        meshText.position.set(
-          xPositionGeo,
-          yPositionGeo + addYMeshText,
-          zPositionGeo
-        );
-        scene.add(meshText);
-        allMeshText.push(meshText);
-      }
-    );
+    loader.load("assets/fonts/Josefin_Sans_Light.json", function (font) {
+      const geometry = new TextGeometry(serie.name, {
+        font: font,
+        size: 1.4,
+        height: 0.05,
+        curveSegments: 4,
+        bevelEnabled: false,
+        bevelThickness: 10,
+        bevelSize: 8,
+        bevelSegments: 3,
+      });
+      geometry.center();
+      const material = new THREE.MeshBasicMaterial({
+        color: "#dbe4eb",
+        specular: "#dbe4eb",
+      });
+      meshText = new THREE.Mesh(geometry, material);
+      meshText.quaternion.copy(camera.quaternion);
+      meshText.position.set(
+        xPositionGeo,
+        yPositionGeo + addYMeshText,
+        zPositionGeo
+      );
+      scene.add(meshText);
+      allMeshText.push(meshText);
+    });
   }
 }
 // First row
