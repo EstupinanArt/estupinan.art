@@ -149,7 +149,7 @@ const seriesArt = [
     file: "hk_tab_89_",
     number: 8,
     params: octahedronParams,
-    name: "Honk Kong",
+    name: "Hong Kong",
   },
   {
     folder: "negra_paris_1999",
@@ -199,7 +199,7 @@ const seriesArt = [
     file: "shanshuei_hua_",
     number: 11,
     params: octahedronParams,
-    name: "Shanshuei Hua",
+    name: "Shanshui Hua",
   },
 ];
 
