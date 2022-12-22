@@ -14,12 +14,30 @@ site:
 urls:
   about: /about.html
   blog: /blog.html
-  projects: /projects.html
 
-projects:
-  first_project:
-    title: A engagement title
-    description: What about this project
-  second_project:
-    title: A new title project
-    description: An interesting text
+about:
+  organization:
+    title: About Estupinan Art
+    description: Some enjoyable description.
+  contact:
+    location_1:
+      address:
+      phone:
+      email:
+    location_2:
+      address:
+      phone:
+      email:
+  social:
+    twitter:
+      icon: /assets/images/icons/twitter-icon.png
+      account: https://twitter.com/estupinan.art
+    instagram:
+      icon: /assets/images/icons/instagram-icon.png
+      account: https://instagram.com/estupinan.art
+  artists:
+    first:
+      name: Carlos Estupinan
+
+labels:
+  featured: Featured

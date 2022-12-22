@@ -14,12 +14,30 @@ site:
 urls:
   about: /es/about.html
   blog: /es/blog.html
-  projects: /es/projects.html
 
-projects:
-  first_project:
-    title: Un atractivo título
-    description: Algo que decir acerca de este proyecto
-  second_project:
-    title: El título del nuevo proyecto
-    description: Un texto interesante
+about:
+  organization:
+    title: Acerca de Estupinan Art
+    description: Alguna encomiable descripción
+  contact:
+    location_1:
+      address:
+      phone:
+      email:
+    location_2:
+      address:
+      phone:
+      email:
+  social:
+    twitter:
+      icon: /assets/images/icons/twitter-icon.png
+      account: https://twitter.com/estupinan.art
+    instagram:
+      icon: /assets/images/icons/instagram-icon.png
+      account: https://instagram.com/estupinan.art
+  artists:
+    first:
+      name: Carlos Estupiñan
+
+labels:
+  featured: Destacado

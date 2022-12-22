@@ -2,16 +2,16 @@
 layout: default
 title: titles.blog
 ---
-<h1>Latest Posts</h1>
+
+{% include partials/featured-post.html %}
 
 <div class="bg-estupinanLightBlue dark:bg-estupinanDark relative z-0">
     <div class="container max-w-screen-lg mx-auto">
         <div class="py-10 lg:py-16 grid grid-cols-1 gap-10">
             {% for post in site.posts %}
-            <div class="flex px-10 lg:px-0">
-                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                {{ post.excerpt }}
-            </div>
+                <div class="flex px-10 lg:px-0">
+                    {%- include partials/post-preview.html -%}
+                </div>
             {% endfor %}
         </div>
     </div>
