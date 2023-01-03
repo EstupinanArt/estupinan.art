@@ -17,17 +17,17 @@ urls:
 
 about:
   organization:
-    title: About Estupinan Art
-    description: Some enjoyable description.
+    logo: /assets/images/logo.png
+    description: We are a young organization that believe in to makes a better world for everyone through the art
   contact:
     location_1:
-      address:
-      phone:
-      email:
+      address: Home Gallery - 5706 Brynwook circle NW Acworth 30101 GA
+      phone: +1 201 245 6643
+      email: jairo@estupinan.art
     location_2:
-      address:
-      phone:
-      email:
+      address: 26 Nort Washington Ave Bergenfield New Jersey -7621
+      phone: +1 201 245 6643
+      email: fabiola@estupinan.art
   social:
     twitter:
       icon: /assets/images/icons/twitter-icon.png
@@ -38,6 +38,7 @@ about:
   artists:
     first:
       name: Carlos Estupinan
+      photo:
 
 labels:
   featured: Featured
