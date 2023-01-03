@@ -8,12 +8,6 @@ module.exports = {
     './*.html',
   ],
   theme: {
-    screens: {
-      sm: '720px',
-      md: '960px',
-      lg: '1080px',
-      xl: '1920px'
-    },
     extend: {
       colors: {
         estupinanBlueBase: 'rgb(135, 170, 205)',
