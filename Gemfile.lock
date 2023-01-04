@@ -78,14 +78,12 @@ GEM
       nokogiri (>= 1.5.9)
     mercenary (0.4.0)
     method_source (1.0.0)
-    mini_portile2 (2.8.0)
-    minitest (5.16.3)
-    nokogiri (1.13.8)
-      mini_portile2 (~> 2.8.0)
+    minitest (5.15.0)
+    nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (5.0.0)
+    public_suffix (4.0.7)
     racc (1.6.0)
     rack (2.2.4)
     rack-test (2.0.2)
@@ -110,7 +108,7 @@ GEM
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
-    svg_optimizer (0.2.6)
+    svg_optimizer (0.2.5)
       nokogiri
     tailwindcss (1.0.3)
       railties (>= 4.1.0, <= 6.1)
@@ -128,7 +126,7 @@ GEM
     zeitwerk (2.6.1)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   http_parser.rb (~> 0.6.0)
