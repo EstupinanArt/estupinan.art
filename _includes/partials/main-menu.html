@@ -1,6 +1,6 @@
 {% for item in site.data.navigation %}
-    <a class="flex items-center px-2 py-4 lg:py-1 text-estupinanLightBlue dark:text-estupinanLightBlue hover:bg-estupinanDarkBlue space-x-2 font-large
-    rounded-lg lg:-mx-1{% if page.url == item.url %} cursor-default{% else %} {% endif %}"
+    <a class="flex items-center px-2 py-4 md:py-1 text-estupinanLightBlue dark:text-estupinanLightBlue hover:bg-estupinanDarkBlue space-x-2 font-large
+    rounded-lg md:-mx-1{% if page.url == item.url %} cursor-default{% else %} {% endif %}"
        href="{{ site.baseurl }}{{ item.url }}" rel="noopener noreferrer">
         <div class="flex flex-1 flex-col ml-px">
             <div class="font-semibold">
