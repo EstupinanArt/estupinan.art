@@ -270,7 +270,7 @@ for (let indexRow = 0; indexRow < rows.length; indexRow++) {
     loader.load("assets/fonts/Josefin_Sans_Light.json", function (font) {
       const geometry = new TextGeometry(serie.name, {
         font: font,
-        size: 1.4,
+        size: 1,
         height: 0.05,
         curveSegments: 4,
         bevelEnabled: false,
@@ -280,8 +280,8 @@ for (let indexRow = 0; indexRow < rows.length; indexRow++) {
       });
       geometry.center();
       const material = new THREE.MeshBasicMaterial({
-        color: "#dbe4eb",
-        specular: "#dbe4eb",
+        color:  "#5b84ac", // "#b6cfe7", //"#dbe4eb",
+        specular: "#5b84ac", // "#b6cfe7", //"#dbe4eb",
       });
       meshText = new THREE.Mesh(geometry, material);
       meshText.quaternion.copy(camera.quaternion);
