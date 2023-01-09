@@ -29,12 +29,8 @@ about:
       phone: +1 201 245 6643
       email: fabiola@estupinan.art
   social:
-    twitter:
-      icon: /assets/images/icons/twitter-icon.png
-      account: https://twitter.com/estupinan.art
-    instagram:
-      icon: /assets/images/icons/instagram-icon.png
-      account: https://instagram.com/estupinan.art
+    twitter: Twitter
+    instagram: Instagram
   artists:
     first:
       name: Carlos Estupiñan

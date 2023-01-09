@@ -1,0 +1,9 @@
+- name: Twitter
+  slug: twitter
+  url: https://twitter.com/estupinan.art
+  icon: icon-twitter.svg
+
+- name: Instagram
+  slug: instagram
+  url: https://instagram.com/estupinan.art
+  icon: icon-instagram.svg
