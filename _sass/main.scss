@@ -2,6 +2,19 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+#hero {
+  background-image: url("/assets/images/background-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#media(max-width: 576px) {
+  #hero {
+    background-image: url("/assets/images/bakground-mobile.jpg");
+    background-position: center;
+  }
+}
+
 .work-dropdown .menu {
   display: none;
 }
@@ -9,8 +22,6 @@
 .work-dropdown:hover .menu {
   display: block;
 }
-
-/* Navbar toggler */
 
 @media (max-width: 1023px) {
   .navbar .navbar-content {

@@ -9,7 +9,7 @@ notifications:
 
 site:
   description: Some enjoyable description.
-  slogan: A phrase as slogan.
+  slogan: Doing art for a better world.
 
 urls:
   about: /about.html

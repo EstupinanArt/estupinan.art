@@ -9,7 +9,7 @@ notifications:
 
 site:
   description: Alguna descripción cautivadora.
-  slogan: Una frase como slogan.
+  slogan: Arte para un mundo mejor.
 
 urls:
   about: /es/about.html
