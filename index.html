@@ -7,11 +7,21 @@ id: index
 <!-- Hero Section -->
 <section id="hero">
     <!-- Hero Container -->
-    <div class="container max-w-6xl mx-auto px-6 py-12">
-
+    <div class="mx-6 px-2 py-12">
+        <img src="/assets/images/logotypo.png" alt="" class="w-56" />
     </div>
     <div class="max-w-lg mt-32 mb-32 p-4 font-sans text-4xl text-estupinanGrayBlue uppercase border-2 border-estupinanGrayBlue md:p-10 md:m-32 mx-0 md:text-6xl">
         {% t site.slogan %}
+    </div>
+</section>
+
+<!-- Interactive Section -->
+<section id="interactive">
+    <div class="flex items-center justify-center text-4xl hover:underline md:text-6xl">
+        {% t titles.galleries %}
+    </div>
+    <div class="my-20 w-3/4">
+        <script src="assets/js/main-bundle.js"></script>
     </div>
 </section>
 
