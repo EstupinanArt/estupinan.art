@@ -6,3 +6,9 @@
 
 - title: titles.blog
   url: /blog.html
+
+- title: titles.galleries
+  url: /galleries.html
+
+- title: titles.videos
+  url: /videos.html

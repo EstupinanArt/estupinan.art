@@ -2,8 +2,8 @@ titles:
   home: Inicio
   about: Acerca de
   blog: Blog
-  projects: Proyectos
-  galleries: Visita nuestras galerías
+  galleries: Galerías
+  videos: Vídeos
 
 notifications:
   build: Estamos en construcción...
@@ -43,3 +43,4 @@ labels:
   share_in_facebook: Compartir en Facebook
   share_via_email: Compartir por correo electrónico
   share_email_body: Mira este artículo que encontré en el blog de Estupinan Art
+  galleries: Visita nuestras galerías
