@@ -6,34 +6,34 @@ id: index
 
 <!-- Hero Section -->
 <section id="hero">
-    <!-- Hero Container -->
-    <div class="mx-6 px-2 py-12">
-        <img src="/assets/images/logotypo.png" alt="" class="w-56" />
+    {% include partials/hero.html %}
+</section>
+
+<!-- Vídeos Section -->
+<section id="videos">
+    <div class="flex justify-center mb-20">
+        <h2 class="text-4xl text-center uppercase md:text-5xl">
+            {% t titles.videos %}
+        </h2>
     </div>
-    <div class="max-w-lg mt-32 mb-32 p-4 font-sans text-4xl text-estupinanGrayBlue uppercase border-2 border-estupinanGrayBlue md:p-10 md:m-32 mx-0 md:text-6xl">
-        {% t site.slogan %}
+    <div class="item-container">
+        {% for video in site.data.videos-row-1 %}
+        {% include partials/video-item.html %}
+        {% endfor %}
+    </div>
+    <div class="item-container">
+        {% for video in site.data.videos-row-2 %}
+        {% include partials/video-item.html %}
+        {% endfor %}
+    </div>
+    <div class="item-container">
+        {% for video in site.data.videos-row-3 %}
+        {% include partials/video-item.html %}
+        {% endfor %}
     </div>
 </section>
 
-<!-- Interactive Section -->
+<!-- Galleries Section -->
 <section id="interactive">
-    <div class="flex items-center justify-center text-4xl hover:underline md:text-6xl">
-        {% t labels.galleries %}
-    </div>
-    <div class="my-20 w-3/4">
-        <script src="assets/js/main-bundle.js"></script>
-    </div>
+    {% include partials/galleries.html %}
 </section>
-
-<!--
-<div class="static flex z-0 top-0 left-0 justify-center">
-    <script src="assets/js/main-bundle.js"></script>
-    <div class="absolute flex items-center z-10 my-72 rounded-2xl bg-estupinanDarkOrange w-auto h-32 p-10
-shadow-white shadow-2xl space-x-10">
-        <img class="w-36 md:w-52" src="./assets/images/icons/warning.png" alt="">
-        <div class="text-xl font-bold text-estupinanDark md:text-4xl">
-            {% t notifications.build %}
-        </div>
-    </div>
-</div>
--->
