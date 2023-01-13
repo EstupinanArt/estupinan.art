@@ -9,4 +9,7 @@
     <h5>
         {{ video.title }}
     </h5>
+    <div class="items-center">
+        <iframe src="{{ video.video-url }}" allow="autoplay; fullscreen; picture-in-picture" class="absolute top-0 left-0 w-full h-full" title="{{ video.title }}"></iframe>
+    </div>
 </div>
