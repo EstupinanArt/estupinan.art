@@ -77,3 +77,7 @@
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
+
+.location-item {
+  @apply flex flex-row items-center px-6 space-x-2 w-auto;
+}
