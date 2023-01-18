@@ -9,31 +9,7 @@ id: index
     {% include partials/hero.html %}
 </section>
 
-<!-- Vídeos Section -->
-<section id="videos">
-    <div class="flex justify-center mb-20">
-        <h2 class="text-4xl text-center uppercase md:text-5xl">
-            {% t titles.videos %}
-        </h2>
-    </div>
-    <div class="item-container">
-        {% for video in site.data.videos-row-1 %}
-        {% include partials/video-item.html %}
-        {% endfor %}
-    </div>
-    <div class="item-container">
-        {% for video in site.data.videos-row-2 %}
-        {% include partials/video-item.html %}
-        {% endfor %}
-    </div>
-    <div class="item-container">
-        {% for video in site.data.videos-row-3 %}
-        {% include partials/video-item.html %}
-        {% endfor %}
-    </div>
-</section>
-
 <!-- Galleries Section -->
-<section id="interactive">
+<section id="galleries">
     {% include partials/galleries.html %}
 </section>
