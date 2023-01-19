@@ -1,11 +1,8 @@
-<div class="group item">
-    <img src="{{ video.desktop-url }}" alt="" class="hidden w-full duration-200 md:block group-hover:scale-110" />
-    <img src="{{ video.mobile-url }}" alt="" class="w-full md:hidden" />
-    <div class="item-gradient"></div>
-    <h5 class="hidden md:flex">
-        {{ video.title }}
-    </h5>
-    <div class="items-center">
-        <iframe src="{{ video.video-url }}" allow="autoplay; fullscreen; picture-in-picture" class="absolute top-0 left-0 w-full h-full" title="{{ video.title }}"></iframe>
+<div class="relative group h-full md:w-1/4">
+    <div class="flex flex-row items-center md:flex-col md:space-y-10 md:space-x-0">
+        <iframe src="{{ video.video-url }}" allow="autoplay; fullscreen; picture-in-picture" class="top-0 left-0 w-full h-full space-y-6" title="{{ video.title }}"></iframe>
+        <h5 class="md:flex">
+            {{ video.title }}
+        </h5>
     </div>
 </div>

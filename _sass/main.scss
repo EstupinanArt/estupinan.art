@@ -4,12 +4,12 @@
 
 @layer base {
   h5 {
-    @apply absolute px-6 duration-200 w-52 bottom-4 md:bottom-8 md:px-10 group-hover:scale-110 group-hover:text-black;
+    @apply relative px-6 duration-200 w-52 bottom-4 md:bottom-8 md:px-0 group-hover:scale-110 text-estupinanDark dark:text-estupinanLightBlue group-hover:text-estupinanDarkYellow;
   }
 }
 
 .item-container {
-  @apply flex flex-col justify-between w-full space-y-6 text-2xl text-white uppercase md:flex-row md:space-y-0 md:space-x-8;
+  @apply flex flex-col justify-between w-3/4 mx-auto space-y-6 text-2xl text-white uppercase md:flex-row md:space-y-0 md:space-x-8;
 }
 
 .item {
