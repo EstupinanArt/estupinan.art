@@ -6,7 +6,7 @@
                 {% assign lang_slug = "" %}            
             {% endif %}
             <a class="flex rounded px-4 py-2 xl:py-1 {% if lang == site.lang %} cursor-default font-medium text-estupinanDarkBlue
-            {% else %} text-estupinanBlueBase hover:bg-estupinanDark hover:text-estupinanBlueWhite hover:shadow
+            {% else %} text-estupinanBlueBase hover:bg-estupinanDark hover:text-white hover:shadow
             rounded-full{% endif %}" href="{{ lang_slug }}{{ page.url }}">
                 {{ site.data.languages[lang].name }}
             </a>

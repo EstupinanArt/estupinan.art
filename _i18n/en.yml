@@ -10,7 +10,7 @@ notifications:
 
 site:
   description: Some enjoyable description.
-  slogan: Doing art for a better world.
+  slogan: The life as the art... it is the riddle-puzzle of the possible
 
 urls:
   about: /about.html

@@ -36,7 +36,8 @@ module.exports = {
         estupinanGrayGreen: 'rgb(94, 192, 127)',
         estupinanDarkGreen: 'rgb(59, 164, 95)',
         estupinanBlue: 'rgb(0, 165, 223)',
-        estupinanDark: 'rgb(14, 21, 29)'
+        estupinanDark: 'rgb(14, 21, 29)',
+        estupinanRed: 'rgb(147, 0, 0)',
       },
       fontFamily: {
         sans: ['Josefin Sans', ...defaultTheme.fontFamily.sans],

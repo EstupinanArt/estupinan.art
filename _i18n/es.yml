@@ -10,7 +10,7 @@ notifications:
 
 site:
   description: Alguna descripción cautivadora.
-  slogan: Arte para un mundo mejor.
+  slogan: La vida como el arte... es del acertijo de lo posible
 
 urls:
   about: /es/about.html
