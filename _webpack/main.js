@@ -7,9 +7,9 @@ const raycaster = new THREE.Raycaster();
 const windowHeight = window.innerHeight - window.innerHeight * 0.2;
 const aspect = window.innerWidth / windowHeight;
 const fov = 50;
-const screenWidth = fov * aspect - 8;
+const screenWidth = fov * aspect - 25;
 const screenMidWidth = screenWidth / 2;
-const camera = new THREE.PerspectiveCamera(fov, aspect, 0.1, 2000);
+const camera = new THREE.PerspectiveCamera(fov, aspect, 1, 1000);
 
 // Configure text
 const allMeshText = [];
@@ -37,7 +37,7 @@ const lightDown = new THREE.DirectionalLight(0xffffff, 1);
 lightDown.position.set(1, -1, 1);
 scene.add(lightDown);
 
-const backLight = new THREE.DirectionalLight(0xffffff, 0.5);
+const backLight = new THREE.DirectionalLight(0xffffff, 0.75);
 backLight.position.set(-1, -1, -1);
 scene.add(backLight);
 
