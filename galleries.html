@@ -3,10 +3,23 @@ layout: default
 title: titles.about
 ---
 
-<div class="flex bg-white dark:bg-estupinanDark">
-    <div class="flex items-center text-estupinanDark dark:text-estupinanLightBlue mx-auto my-auto min-h-screen">
-        <p class="text-4xl md:text-6xl">
-            {% t notifications.build %}
-        </p>
+<div>
+    <div class="flex items-center justify-center mx-auto">
+        <div id="gallery-title" class="border rounded-full p-4">
+            Gallery title
+        </div>
+    </div>
+    <div class="flex flex-row mt-10 mb-20 items-center justify-between mx-auto">
+        {% for gallery in site.data.galleries %}
+            <button id="button-{{ gallery.name }}" class="gallery-button">
+                <img src="assets/images/galleries/menu/{{ gallery.image }}" alt="{{ gallery.name }}" class="w-32">
+            </button>
+        {% endfor %}
     </div>
 </div>
+
+<div class="items-center mb-20 justify-center mx-auto w-6/12 shadow-slate-600 shadow-lg">
+    <img src="assets/images/galleries/SERIE_EVENTOS_INORGANICOS_XIAO/EVENTO%20INORGANICO-01.jpg" alt="">
+</div>
+
+<script src="/assets/js/galleryNavButtons-bundle.js" defer></script>
