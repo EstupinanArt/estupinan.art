@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     main: path.join(__dirname, '_webpack', 'main'),
     mobileMenu: path.join(__dirname, '_webpack', 'mobile-menu'),
+    galleryNavButtons: path.join(__dirname, '_webpack', 'gallery-nav-buttons'),
   },
   output: {
     path: path.resolve(__dirname, 'assets/js'),

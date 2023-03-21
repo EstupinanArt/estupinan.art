@@ -80,3 +80,7 @@
 .location-item {
   @apply flex flex-row items-center px-6 space-x-2 w-auto;
 }
+
+.gallery-button {
+  @apply m-2 p-4 border hover:shadow-slate-600 hover:shadow-lg hover:scale-105;
+}
