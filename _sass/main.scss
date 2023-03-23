@@ -26,11 +26,11 @@
   background-size: cover;
 }
 
-#media(max-width: 576px) {
-  #hero {
-    background-image: url("/assets/images/bakground-mobile.jpg");
-    background-position: center;
-  }
+#gallery {
+  background-image: url("/assets/images/escenario_0.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000px 1000px;
 }
 
 .hamburger {

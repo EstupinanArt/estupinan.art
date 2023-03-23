@@ -15,7 +15,7 @@
   \*****************************************/
 /***/ (() => {
 
-eval("let galleryButtonHover = document.getElementsByClassName('gallery-button');\nfor (let i = 0; i < galleryButtonHover.length; i++) {\n  galleryButtonHover[i].onmouseenter = function () {\n    console.log(galleryButtonHover[i].id);\n  };\n}\n\n//# sourceURL=webpack:///./_webpack/gallery-nav-buttons.js?");
+eval("let galleryTitle = document.getElementById('gallery-title');\nfunction showGalleryTitle(titleObject, title) {\n  titleObject.innerHTML = title;\n}\n\n//# sourceURL=webpack:///./_webpack/gallery-nav-buttons.js?");
 
 /***/ })
 
