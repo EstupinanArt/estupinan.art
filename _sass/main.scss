@@ -27,10 +27,14 @@
 }
 
 #gallery {
-  background-image: url("/assets/images/escenario_0.webp");
+  background-image: url("/assets/images/gallery_scenario.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1000px 1000px;
+  background-size: 1920px 1371px;
+}
+
+.gallery-active {
+  border: white;
 }
 
 .hamburger {
