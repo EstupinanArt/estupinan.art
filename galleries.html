@@ -3,7 +3,7 @@ layout: default
 title: titles.about
 ---
 
-<div>
+<section>
     <div class="flex flex-row mt-10 mb-10 items-center justify-between mx-auto">
         {% for gallery in site.data.galleries %}
             <button id="button-{{ gallery.name }}" class="gallery-button">
@@ -12,20 +12,42 @@ title: titles.about
         {% endfor %}
     </div>
     <div class="flex items-center justify-center mx-auto mb-10">
-        <span id="gallery-title" class="border rounded-full p-4"></span>
+        <span id="gallery-title" class="rounded-full p-4"></span>
     </div>
-</div>
+</section>
 
 <section id="gallery" class="flex items-center justify-center">
-    <div class="flex items-center justify-center w-[1000px] h-[1000px] mb-20 mx-auto">
-        <img src="assets/images/galleries/SERIE_EVENTOS_INORGANICOS_XIAO/EVENTO%20INORGANICO-01.jpg" alt="" class="w-[300px] shadow-slate-600 shadow-lg">
+    <div class="flex items-center justify-center w-[1920px] h-[1371px] mb-20 mx-auto">
+        <img src="assets/images/galleries/SERIE_EVENTOS_INORGANICOS_XIAO/EVENTO%20INORGANICO-01.jpg" alt="" class="w-[450px] shadow-slate-900 shadow-xl">
     </div>
 </section>
 
 <script>
-    let galleryTitle = document.getElementById('gallery-title');
+    const galleryTitle = document.getElementById('gallery-title');
+
+    let buttons = [
+        document.getElementById('button-COL-TAB-2014'),
+        document.getElementById('button-ESPA-TAB'),
+        document.getElementById('button-HK TAB'),
+        document.getElementById('button-EVENTOS INORGÁNICOS'),
+        document.getElementById('button-PEQUÍN 87'),
+        document.getElementById('button-PARIS NOIRE'),
+        document.getElementById('button-PARIS TAB 91'),
+        document.getElementById('button-PARIS TAB 93'),
+        document.getElementById('button-PARIS TAB 95'),
+        document.getElementById('button-PARIS TAB 99'),
+        document.getElementById('button-SHANSHUEI HUA'),
+    ];
+
+    for (let button of buttons) {
+        button.addEventListener("click", selectGallery);
+    }
 
     function showGalleryTitle(titleObject, title) {
         titleObject.innerHTML = title;
+    }
+
+    function selectGallery() {
+        galleryTitle.classList.add('border');
     }
 </script>
