@@ -4,21 +4,35 @@ title: titles.about
 ---
 
 <section>
-    <div class="flex flex-row mt-10 mb-10 items-center justify-between mx-auto">
-        {% for gallery in site.data.galleries %}
-            <button id="button-{{ gallery.name }}" class="gallery-button">
-                <img onmouseenter="showGalleryTitle(galleryTitle, '{{ gallery.name }}')" src="assets/images/galleries/menu/{{ gallery.image }}" alt="{{ gallery.name }}" class="w-32">
-            </button>
-        {% endfor %}
+    <div class="flex flex-row mt-10 mb-2 items-center justify-center">
+        <div type="button" class="z-40 block selectors flex right-4 p-2 focus:outline-none">
+            <span class="button-left-top bg-estupinanLightBlue dark:bg-white"></span>
+            <span class="button-left-bottom bg-estupinanLightBlue dark:bg-white"></span>
+        </div>
+        <div id="gallery-picture" class="m-2 p-4 border hover:shadow-slate-600 hover:shadow-lg hover:scale-105">
+            <img src="assets/images/galleries/menu/col-tab-2014.jpg" alt="col-tab-2014" class="w-32">
+        </div>
+        <div type="button" class="z-40 block selectors flex left-4 p-2 focus:outline-none">
+            <span class="button-right-top bg-estupinanLightBlue dark:bg-white"></span>
+            <span class="button-right-bottom bg-estupinanLightBlue dark:bg-white"></span>
+        </div>
     </div>
-    <div class="flex items-center justify-center mx-auto mb-10">
+    <div class="flex items-center justify-center mx-auto mb-2">
         <span id="gallery-title" class="rounded-full p-4"></span>
     </div>
 </section>
 
-<section id="gallery" class="flex items-center justify-center">
-    <div class="flex items-center justify-center w-[1920px] h-[1371px] mb-20 mx-auto">
+<section id="gallery" class="flex w-3/4 items-center justify-between mx-auto">
+    <div type="button" class="z-40 block selectors flex right-4 p-2 focus:outline-none">
+        <span class="button-left-top bg-estupinanLightBlue dark:bg-white"></span>
+        <span class="button-left-bottom bg-estupinanLightBlue dark:bg-white"></span>
+    </div>
+    <div class="flex items-center justify-center md:w-[720px] md:h-[680px] mb-20">
         <img src="assets/images/galleries/SERIE_EVENTOS_INORGANICOS_XIAO/EVENTO%20INORGANICO-01.jpg" alt="" class="w-[450px] shadow-slate-900 shadow-xl">
+    </div>
+    <div type="button" class="z-40 block selectors flex left-4 p-2 focus:outline-none">
+        <span class="button-right-top bg-estupinanLightBlue dark:bg-white"></span>
+        <span class="button-right-bottom bg-estupinanLightBlue dark:bg-white"></span>
     </div>
 </section>
 

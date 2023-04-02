@@ -26,13 +26,6 @@
   background-size: cover;
 }
 
-#gallery {
-  background-image: url("/assets/images/gallery_scenario.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 1920px 1371px;
-}
-
 .gallery-active {
   border: white;
 }
@@ -85,6 +78,48 @@
   @apply flex flex-row items-center px-6 space-x-2 w-auto;
 }
 
-.gallery-button {
-  @apply m-2 p-4 border hover:shadow-slate-600 hover:shadow-lg hover:scale-105;
+.selectors {
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.button-left-top,
+.button-left-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.button-left-top {
+  transform: rotate(-45deg);
+}
+
+.button-left-bottom {
+  transform: rotate(45deg);
+  translate: 0 16px;
+}
+
+.button-right-top,
+.button-right-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.button-right-top {
+  transform: rotate(45deg);
+}
+
+.button-right-bottom {
+  transform: rotate(-45deg);
+  translate: 0 16px;
 }
