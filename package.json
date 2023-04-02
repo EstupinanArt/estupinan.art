@@ -15,7 +15,7 @@
   "scripts": {
     "requirements": "bundle install && build",
     "develop": "bundle exec jekyll clean && run-p develop:{webpack,jekyll}",
-    "develop:jekyll": "bundle exec jekyll serve --host 0.0.0.0 --livereload",
+    "develop:jekyll": "bundle exec jekyll serve --host 0.0.0.0 --livereload --incremental --disable-disk-cache",
     "develop:webpack": "webpack --mode development --watch",
     "build": "jekyll build --config _config.yml",
     "serve": "jekyll serve --livereload --incremental",
