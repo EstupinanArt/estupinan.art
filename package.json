@@ -10,7 +10,8 @@
     "tailwindcss": "^3.1.8",
     "three": "^0.145.0",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "yaml": "^2.2.1"
   },
   "scripts": {
     "requirements": "bundle install && build",

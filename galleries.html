@@ -5,63 +5,32 @@ title: titles.about
 
 <section>
     <div class="flex flex-row mt-10 mb-2 items-center justify-center">
-        <div type="button" class="z-40 block selectors flex right-4 p-2 focus:outline-none">
+        <div id="backward-gallery" type="button" class="z-40 selectors right-4 p-2 focus:outline-none">
             <span class="button-left-top bg-estupinanLightBlue dark:bg-white"></span>
             <span class="button-left-bottom bg-estupinanLightBlue dark:bg-white"></span>
         </div>
-        <div id="gallery-picture" class="m-2 p-4 border hover:shadow-slate-600 hover:shadow-lg hover:scale-105">
-            <img src="assets/images/galleries/menu/col-tab-2014.jpg" alt="col-tab-2014" class="w-32">
+        <div class="m-2 p-4 border rounded-full hover:shadow-slate-600 hover:shadow-lg hover:scale-105">
+            <span id="gallery-title">COL-TAB-2014</span>
         </div>
-        <div type="button" class="z-40 block selectors flex left-4 p-2 focus:outline-none">
+        <div id="forward-gallery" type="button" class="z-40 selectors left-4 p-2 focus:outline-none">
             <span class="button-right-top bg-estupinanLightBlue dark:bg-white"></span>
             <span class="button-right-bottom bg-estupinanLightBlue dark:bg-white"></span>
         </div>
     </div>
-    <div class="flex items-center justify-center mx-auto mb-2">
-        <span id="gallery-title" class="rounded-full p-4"></span>
-    </div>
 </section>
 
 <section id="gallery" class="flex w-3/4 items-center justify-between mx-auto">
-    <div type="button" class="z-40 block selectors flex right-4 p-2 focus:outline-none">
+    <div id="backward-picture" type="button" class="z-40 block selectors right-4 p-2 focus:outline-none">
         <span class="button-left-top bg-estupinanLightBlue dark:bg-white"></span>
         <span class="button-left-bottom bg-estupinanLightBlue dark:bg-white"></span>
     </div>
-    <div class="flex items-center justify-center md:w-[720px] md:h-[680px] mb-20">
-        <img src="assets/images/galleries/SERIE_EVENTOS_INORGANICOS_XIAO/EVENTO%20INORGANICO-01.jpg" alt="" class="w-[450px] shadow-slate-900 shadow-xl">
+    <div class="flex items-center justify-center md:w-[1080px] md:h-[960px] mb-20">
+        <img id="picture" src="assets/images/galleries/SERIE_EVENTOS_INORGANICOS_XIAO/EVENTO%20INORGANICO-01.jpg" alt="" class="shadow-slate-900 shadow-xl">
     </div>
-    <div type="button" class="z-40 block selectors flex left-4 p-2 focus:outline-none">
+    <div id="forward-picture" type="button" class="z-40 block selectors left-4 p-2 focus:outline-none">
         <span class="button-right-top bg-estupinanLightBlue dark:bg-white"></span>
         <span class="button-right-bottom bg-estupinanLightBlue dark:bg-white"></span>
     </div>
 </section>
 
-<script>
-    const galleryTitle = document.getElementById('gallery-title');
-
-    let buttons = [
-        document.getElementById('button-COL-TAB-2014'),
-        document.getElementById('button-ESPA-TAB'),
-        document.getElementById('button-HK TAB'),
-        document.getElementById('button-EVENTOS INORGÁNICOS'),
-        document.getElementById('button-PEQUÍN 87'),
-        document.getElementById('button-PARIS NOIRE'),
-        document.getElementById('button-PARIS TAB 91'),
-        document.getElementById('button-PARIS TAB 93'),
-        document.getElementById('button-PARIS TAB 95'),
-        document.getElementById('button-PARIS TAB 99'),
-        document.getElementById('button-SHANSHUEI HUA'),
-    ];
-
-    for (let button of buttons) {
-        button.addEventListener("click", selectGallery);
-    }
-
-    function showGalleryTitle(titleObject, title) {
-        titleObject.innerHTML = title;
-    }
-
-    function selectGallery() {
-        galleryTitle.classList.add('border');
-    }
-</script>
+<script src="/assets/js/galleryNavButtons-bundle.js" defer></script>
