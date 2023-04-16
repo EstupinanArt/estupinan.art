@@ -10,7 +10,7 @@ notifications:
 
 site:
   description: Alguna descripción cautivadora.
-  slogan: La vida como el arte... es del acertijo de lo posible
+  slogan: La vida como el arte …… es el acertijo de lo posible
 
 urls:
   about: /es/about.html
