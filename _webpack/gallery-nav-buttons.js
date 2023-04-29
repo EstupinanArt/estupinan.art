@@ -587,7 +587,7 @@ const contentGalleries = {
             photo: "/assets/images/galleries/SERIE_PARIS_TAB_91_IMG_XIAO/Paris_Tab_91_01.jpg"
         }
     },
-    parisTab92: {
+    parisTab93: {
         title: "Serie PARIS TAB 93",
         parisTab9301: {
             title: "PARIS TAB 93 01",
@@ -628,6 +628,308 @@ const contentGalleries = {
             title: "PARIS TAB 93 08",
             description: "Acrilyc size 62,99/51,18 inch 160/130 cm.",
             photo: "/assets/images/galleries/SERIE_PARIS_TAB_93_IMG_XIAO/Paris_Tab_93_08.jpg"
+        }
+    },
+    parisTab95: {
+        title: "Serie PARIS TAB 95",
+        parisTab9501: {
+            title: "PARIS TAB 95 01",
+            description: "Acrilyc size 62,99/102.36 inch 160/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_01.jpg"
+        },
+        parisTab9502: {
+            title: "PARIS TAB 95 02",
+            description: "Acrilyc size 62,99/102.36 inch 160/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_02.jpg"
+        },
+        parisTab9503: {
+            title: "PARIS TAB 95 03",
+            description: "Acrilyc size 62,99/102.36 inch 160/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_03.jpg"
+        },
+        parisTab9504: {
+            title: "PARIS TAB 95 04",
+            description: "Acrilyc size 62,99/102.36 inch 160/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_04.jpg"
+        },
+        parisTab9505: {
+            title: "PARIS TAB 95 05",
+            description: "Acrilyc size 62,99/102.36 inch 160/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_05.jpg"
+        },
+        parisTab9506: {
+            title: "PARIS TAB 95 06",
+            description: "Acrilyc size 62,99/102.36 inch 160/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_06.jpg"
+        },
+        parisTab9507: {
+            title: "PARIS TAB 95 07",
+            description: "Acrilyc size 62,99/153.54 inch 160/390 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_07.jpg"
+        },
+        parisTab9508: {
+            title: "PARIS TAB 95 08",
+            description: "Acrilyc size 62,99/153.54 inch 160/390 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_08.jpg"
+        },
+        parisTab9509: {
+            title: "PARIS TAB 95 09",
+            description: "Acrilyc size 62,99/153.54 inch 160/390 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_09.jpg"
+        },
+        parisTab9510: {
+            title: "PARIS TAB 95 10",
+            description: "Acrilyc size 62,99/102.36 inch 160/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_10.jpg"
+        },
+        parisTab9511: {
+            title: "PARIS TAB 95 11",
+            description: "Acrilyc size 62,99/153.54 inch 160/390 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_11.jpg"
+        },
+        parisTab9513: {
+            title: "PARIS TAB 95 13",
+            description: "Acrilyc size 76.77/255.91 inch 195/650 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_13.jpg"
+        },
+        parisTab9514: {
+            title: "PARIS TAB 95 14",
+            description: "Acrilyc size 102.36/153.54 inch 260/390 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_14.jpg"
+        },
+        parisTab9515: {
+            title: "PARIS TAB 95 15",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_15.jpg"
+        },
+        parisTab9516: {
+            title: "PARIS TAB 95 16",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_16.jpg"
+        },
+        parisTab9517: {
+            title: "PARIS TAB 95 17",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_17.jpg"
+        },
+        parisTab9518: {
+            title: "PARIS TAB 95 18",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_18.jpg"
+        },
+        parisTab9519: {
+            title: "PARIS TAB 95 19",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_19.jpg"
+        },
+        parisTab9520: {
+            title: "PARIS TAB 95 20",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_20.jpg"
+        },
+        parisTab9521: {
+            title: "PARIS TAB 95 21",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_21.jpg"
+        },
+        parisTab9522: {
+            title: "PARIS TAB 95 22",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_22.jpg"
+        },
+        parisTab9523: {
+            title: "PARIS TAB 95 23",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_23.jpg"
+        },
+        parisTab9524: {
+            title: "PARIS TAB 95 24",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_24.jpg"
+        },
+        parisTab9525: {
+            title: "PARIS TAB 95 25",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_25.jpg"
+        },
+        parisTab9526: {
+            title: "PARIS TAB 95 26",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_26.jpg"
+        },
+        parisTab9527: {
+            title: "PARIS TAB 95 27",
+            description: "Acrilyc size 62.99/153.54 inch 160/390 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_27.jpg"
+        },
+        parisTab9528: {
+            title: "PARIS TAB 95 28",
+            description: "Acrilyc size 76.77/102.36 inch 195/260 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_28.jpg"
+        },
+        parisTab9529: {
+            title: "PARIS TAB 95 29",
+            description: "Acrilyc size 62.99/153.54 inch 160/390 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_95_IMG_XIAO/Paris_Tab_95_29.jpg"
+        }
+    },
+    parisTab99: {
+        title: "Serie PARIS TAB 99",
+        parisTab9901: {
+            title: "PARIS TAB 99 01",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_01.jpg"
+        },
+        parisTab9902: {
+            title: "PARIS TAB 99 02",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_02.jpg"
+        },
+        parisTab9903: {
+            title: "PARIS TAB 99 03",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_03.jpg"
+        },
+        parisTab9904: {
+            title: "PARIS TAB 99 04",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_04.jpg"
+        },
+        parisTab9905: {
+            title: "PARIS TAB 99 05",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_05.jpg"
+        },
+        parisTab9906: {
+            title: "PARIS TAB 99 06",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_06.jpg"
+        },
+        parisTab9907: {
+            title: "PARIS TAB 99 07",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_07.jpg"
+        },
+        parisTab9908: {
+            title: "PARIS TAB 99 08",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_08.jpg"
+        },
+        parisTab9909: {
+            title: "PARIS TAB 99 09",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_09.jpg"
+        },
+        parisTab9910: {
+            title: "PARIS TAB 99 10",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_10.jpg"
+        },
+        parisTab9911: {
+            title: "PARIS TAB 99 11",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_11.jpg"
+        },
+        parisTab9912: {
+            title: "PARIS TAB 99 12",
+            description: "Papel de arroz size 51.18/38.18 inch 130/97 cm.",
+            photo: "/assets/images/galleries/SERIE_PARIS_TAB_99_IMG_XIAO/Paris_Tab_99_12.jpg"
+        }
+    },
+    pekin87: {
+        title: "Serie PEKIN 87",
+        parisTab9101: {
+            title: "PEKIN 87 01",
+            description: "Papel de arroz size 31.49/39.37 inch 80/100 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-01.jpg"
+        },
+        parisTab9102: {
+            title: "PEKIN 87 02",
+            description: "Papel de arroz size 31.49/39.37 inch 80/100 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-02.jpg"
+        },
+        parisTab9103: {
+            title: "PEKIN 87 03",
+            description: "Papel de arroz size 31.49/39.37 inch 80/100 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-03.jpg"
+        },
+        parisTab9104: {
+            title: "PEKIN 87 04",
+            description: "Papel de arroz size 31.49/39.37 inch 80/100 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-04.jpg"
+        },
+        parisTab9105: {
+            title: "PEKIN 87 05",
+            description: "Papel de arroz size 23.62/39.37 inch 60/100 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-05.jpg"
+        },
+        parisTab9106: {
+            title: "PEKIN 87 06",
+            description: "Papel de arroz size 23.62/39.37 inch 60/100 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-06.jpg"
+        },
+        parisTab9107: {
+            title: "PEKIN 87 07",
+            description: "Papel de arroz size 39.37/19.68 inch 100/50 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-07.jpg"
+        },
+        parisTab9108: {
+            title: "PEKIN 87 08",
+            description: "Papel de arroz size 23.62/39.37 inch 60/100 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-08.jpg"
+        },
+        parisTab9109: {
+            title: "PEKIN 87 09",
+            description: "Papel de arroz size 31.49/15.74 inch 80/40 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-09.jpg"
+        },
+        parisTab91010: {
+            title: "PEKIN 87 010",
+            description: "Papel de arroz size 79.86/55.11 inch 180/140 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-010.jpg"
+        },
+        parisTab91011: {
+            title: "PEKIN 87 011",
+            description: "Papel de arroz size 79.86/55.11 inch 180/140 cm. Detail PEKIN 87 10",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-011.jpg"
+        },
+        parisTab91012: {
+            title: "PEKIN 87 012",
+            description: "Papel de arroz size 79.86/55.11 inch 180/140 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-012.jpg"
+        },
+        parisTab91013: {
+            title: "PEKIN 87 013",
+            description: "Papel de arroz size 70.86/216.53 inch 100/550 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-013.jpg"
+        },
+        parisTab91014: {
+            title: "PEKIN 87 014",
+            description: "Papel de arroz size 39.37/19.68 inch 100/50 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-014.jpg"
+        },
+        parisTab91015: {
+            title: "PEKIN 87 015",
+            description: "Papel de arroz size 39.37/19.68 inch 100/50 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-015.jpg"
+        },
+        parisTab91016: {
+            title: "PEKIN 87 016",
+            description: "Papel de arroz size 39.37/19.68 inch 100/50 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-016.jpg"
+        },
+        parisTab91074: {
+            title: "PEKIN 87 017",
+            description: "Papel de arroz size 39.37/19.68 inch 100/50 cm.",
+            photo: "assets/images/galleries/SERIE_PEKIN_87_IMG_XIAO/PEKIN-87-017.jpg"
+        }
+    },
+    shanshueihua: {
+        title: "Serie SHANSHUEI HUA",
+        parisTab9101: {
+            title: "PARIS SHANSHUEI HUA 01",
+            description: "Papel de arroz size 70,86/62,99 inch 180/160 cm.",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_01.jpg"
         }
     }
 };
