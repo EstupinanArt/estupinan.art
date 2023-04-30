@@ -926,10 +926,60 @@ const contentGalleries = {
     },
     shanshueihua: {
         title: "Serie SHANSHUEI HUA",
-        parisTab9101: {
-            title: "PARIS SHANSHUEI HUA 01",
-            description: "Papel de arroz size 70,86/62,99 inch 180/160 cm.",
+        shanshuehua01: {
+            title: "SHANSHUEI HUA 01",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
             photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_01.jpg"
+        },
+        shanshuehua02: {
+            title: "SHANSHUEI HUA 02",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_02.jpg"
+        },
+        shanshuehua03: {
+            title: "SHANSHUEI HUA 03",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_03.jpg"
+        },
+        shanshuehua04: {
+            title: "SHANSHUEI HUA 04",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_04.jpg"
+        },
+        shanshuehua05: {
+            title: "SHANSHUEI HUA 05",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_05.jpg"
+        },
+        shanshuehua06: {
+            title: "SHANSHUEI HUA 06",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_06.jpg"
+        },
+        shanshuehua07: {
+            title: "SHANSHUEI HUA 07",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_07.jpg"
+        },
+        shanshuehua08: {
+            title: "SHANSHUEI HUA 08",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_08.jpg"
+        },
+        shanshuehua09: {
+            title: "SHANSHUEI HUA 09",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_09.jpg"
+        },
+        shanshuehua10: {
+            title: "SHANSHUEI HUA 10",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_10.jpg"
+        },
+        shanshuehua11: {
+            title: "SHANSHUEI HUA 11",
+            description: "Acrilyc on canvas and geotextil size 102,36/255,91 inch. 260/650 cm",
+            photo: "assets/images/galleries/SERIE_SHANSHUEI_HUA_XIAO/SHANSHUEI-HUA_11.jpg"
         }
     }
 };
