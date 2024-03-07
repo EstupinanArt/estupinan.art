@@ -10,7 +10,7 @@ notifications:
 
 site:
   description: Some enjoyable description.
-  slogan: Life as art is the riddle of the possible
+  slogan: Life as art is the riddle of the possible 1
 
 urls:
   about: /about.html
