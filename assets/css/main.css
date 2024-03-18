@@ -1,3 +1,9 @@
+
 ---
 ---
 @import "./_sass/main.scss";
+
+
+canvas{
+  display:"none"
+}
