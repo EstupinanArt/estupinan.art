@@ -1,9 +1,9 @@
-- name: Twitter
-  slug: twitter
-  url: https://twitter.com/estupinan.art
-  icon: icon-twitter.svg
+# - name: Twitter
+#  slug: twitter
+#  url: https://twitter.com/estupinan.art
+#  icon: icon-twitter.svg
 
 - name: Instagram
   slug: instagram
-  url: https://instagram.com/estupinanart
+  url: https://www.instagram.com/vibratgallery/
   icon: icon-instagram.svg
